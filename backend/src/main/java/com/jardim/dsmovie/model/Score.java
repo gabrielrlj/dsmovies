@@ -14,6 +14,12 @@ public class Score {
 
     public Score() {}
 
+    public Score(User user, Movie movie, Double value){
+        this.setUser(user);
+        this.setMovie(movie);
+        this.setValue(value);
+    }
+
     public void setMovie(Movie movie){
         this.id.setMovie(movie);
     }

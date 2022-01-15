@@ -13,8 +13,7 @@ public class User {
 
     public User() {}
 
-    public User(Long id, String email) {
-        this.id = id;
+    public User(String email) {
         this.email = email;
     }
 
