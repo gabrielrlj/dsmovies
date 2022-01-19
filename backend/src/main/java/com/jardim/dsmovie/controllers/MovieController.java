@@ -23,7 +23,7 @@ public class MovieController {
     private MovieService movieService;
 
     @GetMapping
-    public Page<MovieDTO> findAll(@PageableDefault(size = 20, sort = {"score"}) Pageable pageable){
+    public Page<MovieDTO> findAll(@PageableDefault(size = 10, sort = {"title"}) Pageable pageable){
         return movieService.findAll(pageable);
     }
 
