@@ -47,12 +47,13 @@ function getFills(score: number) {
 function Stars({score} : Props) {
 
     const fills = getFills(score);
+    let id = 0;
 
     return (
         <div className="dsmovie-stars-container">
             {fills.map(fill => {
                 return(
-                    <Star fill={fill} />
+                    <Star key={++id} fill={fill} />
                 );
             })}
         </div>
