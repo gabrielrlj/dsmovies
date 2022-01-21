@@ -1,14 +1,39 @@
+#container{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.dsmovie-sorting-container {
+    padding: 15px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: flex-start;
+    flex-grow: 1;
+    flex-wrap: wrap;
+}
+
+.dsmovie-sorting-box {
+    width: 200px;
+    display: flex;
+    justify-content: space-between ;
+    align-items: center;
+}
+
 .dsmovie-pagination-container {
     padding: 15px 0;
     display: flex;
     justify-content: center;
     align-items: center;
+    justify-content: flex-end;
+    flex-grow: 1;
+    flex-wrap: wrap;
 }
 
 .dsmovie-pagination-box {
     width: 180px;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between ;
     align-items: center;
 }
 
@@ -16,6 +41,7 @@
     width: 100%;
     display: flex;
 }
+
 
 .dsmovie-pagination-button {
     width: 40px;
@@ -50,4 +76,23 @@
 
 .dsmovie-flip-horizontal {
     transform: rotate(180deg);
+}
+
+.dsmovie-flip-down {
+    transform: rotate(270deg);
+}
+
+.dsmovie-flip-up {
+    transform: rotate(90deg);
+}
+
+@media(max-width: 409px) {
+    .dsmovie-sorting-box{
+        flex-grow: 1;
+   } 
+
+    .dsmovie-pagination-container{
+        justify-content: center;
+   }
+   
 }

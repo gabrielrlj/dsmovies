@@ -56,6 +56,11 @@
 			<version>RELEASE</version>
 			<scope>compile</scope>
 		</dependency>
+		<dependency>
+			<groupId>com.github.holgerbrandl</groupId>
+			<artifactId>themoviedbapi</artifactId>
+			<version>1.12</version>
+		</dependency>
 	</dependencies>
 
 	<build>

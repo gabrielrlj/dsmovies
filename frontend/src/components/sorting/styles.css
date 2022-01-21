@@ -1,0 +1,22 @@
+.dsmovie-sorting-container {
+    padding: 15px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: flex-start;
+    flex-grow: 1;
+    flex-wrap: wrap;
+}
+
+.dsmovie-sorting-box {
+    width: 200px;
+    display: flex;
+    justify-content: space-between ;
+    align-items: center;
+}
+
+@media(max-width: 409px) {
+    .dsmovie-sorting-box{
+        flex-grow: 1;
+   } 
+}
