@@ -23,18 +23,13 @@ function FormCard({movieId} : Props) {
             });
     }, [movieId]);
 
-    const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-        event.preventDefault();
+    const handleSubmit = (event : React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
 
-        const form = (event.target as any);
-
-        let email : string;
-        let pontuacao : number;
-
-        email = form.email.value;
-        pontuacao = form.score.value;
-
+        let email = $('#email').val();
+        let pontuacao = $('#score').val();
+        
         if(!validateEmail(email)){
+            $('.dsmovie-form').addClass('was-validated');
             return;
         }
 
@@ -58,14 +53,17 @@ function FormCard({movieId} : Props) {
             <img className="dsmovie-movie-card-image" src={movie?.image} alt={movie?.title} />
             <div className="dsmovie-card-bottom-container">
                 <h3>{movie?.title}</h3>
-                <form className="dsmovie-form" onSubmit={handleSubmit}>
+                <form className="dsmovie-form" noValidate>
                     <div className="form-group dsmovie-form-group">
                         <label htmlFor="email">Informe seu email</label>
-                        <input type="email" className="form-control" id="email" />
+                        <input required type="email" className="form-control" id="email" placeholder="Digite um e-mail válido"/>
+                        <div className="invalid-feedback">
+                            Por favor informe um endereço de e-mail válido
+                        </div>
                     </div>
                     <div className="form-group dsmovie-form-group">
                         <label htmlFor="score">Informe sua avaliação</label>
-                        <select className="form-control" id="score">
+                        <select className="form-control" id="score" required>
                             <option>1</option>
                             <option>2</option>
                             <option>3</option>
@@ -74,7 +72,7 @@ function FormCard({movieId} : Props) {
                         </select>
                     </div>
                     <div className="dsmovie-form-btn-container">
-                        <button type="submit" className="btn btn-primary dsmovie-btn">Salvar</button>
+                        <button onClick={(e) => {handleSubmit(e)}} type="button" className="btn btn-primary dsmovie-btn">Salvar</button>
                     </div>
                 </form >
                 <Link to="/">
